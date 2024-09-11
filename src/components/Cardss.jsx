@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 function Cardss() {
   return (
     <div>
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem' }} >
       <Card.Img variant="top" src="" />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>

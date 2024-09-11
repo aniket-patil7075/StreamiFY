@@ -1,13 +1,9 @@
-import React from "react";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
+import React from 'react'
+import Content from './Content'
 
-
-function Content() {
+function Contact() {
   return (
-    <div className="container-fluid h-100">
+    <div>
       <Row>
         <Col
           className="bg-dark col-2 py-4 px-5"
@@ -95,7 +91,7 @@ function Content() {
         </Col>
       </Row>
     </div>
-  );
+  )
 }
 
-export default Content;
+export default Contact

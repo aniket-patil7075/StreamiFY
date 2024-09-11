@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from 'react'
+import Content from './Content'
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
-
-
-function Content() {
+import {info} from "./ContextProvider"
+function Home() {
+  const msg=useContext(info)
+  console.log(msg)
   return (
-    <div className="container-fluid h-100">
-      <Row>
+    <div>
+        <Row>
         <Col
           className="bg-dark col-2 py-4 px-5"
           style={{ borderRight: "2px solid white" }}
@@ -90,12 +92,13 @@ function Content() {
             <Button variant="outline-light">Search</Button>
           </div>
           <div className="my-5 d-flex justify-content-around">
-            {/* <Cardss/> */}
+            <h1 className='text-danger'>Hello, {msg}</h1>
           </div>
         </Col>
       </Row>
+        
     </div>
-  );
+  )
 }
 
-export default Content;
+export default Home
