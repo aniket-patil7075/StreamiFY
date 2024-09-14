@@ -6,8 +6,8 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import {info} from "./ContextProvider"
 function Home() {
-  const msg=useContext(info)
-  console.log(msg)
+  const {movie}=useContext(info)
+  console.log(movie)
   return (
     <div>
         <Row>
@@ -92,7 +92,7 @@ function Home() {
             <Button variant="outline-light">Search</Button>
           </div>
           <div className="my-5 d-flex justify-content-around">
-            <h1 className='text-danger'>Hello, {msg}</h1>
+            {/* <h1 className='text-danger'>Hello, {msg}</h1> */}
           </div>
         </Col>
       </Row>
