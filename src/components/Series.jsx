@@ -1,5 +1,11 @@
 import React from 'react'
 import Content from './Content'
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import { info } from "./ContextProvider";
+import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
 
 function Series() {
   return (

@@ -26,16 +26,17 @@ function Home() {
           <Button variant="danger" className="w-100 py-2 fw-bold mt-5">
             New Feeds
           </Button>
-          <div className=" pt-4">
+          <div className=" pt-4 " style={{height:"50px"}}>
             {/* <FontAwesomeIcon icon="fa-solid fa-fire" /> */}
+            
             <a
               href=""
-              className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
+              className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold"
             >
               Trending
             </a>
           </div>
-          <div className="pt-4">
+          <div className="pt-4" style={{height:"50px"}}>
             <a
               href=""
               className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
@@ -43,7 +44,7 @@ function Home() {
               Popular
             </a>
           </div>
-          <div className="pt-4">
+          <div className="pt-4" style={{height:"50px"}}>
             <a
               href="/Movies"
               className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
@@ -51,7 +52,7 @@ function Home() {
               Movies
             </a>
           </div>
-          <div className="pt-4">
+          <div className="pt-4" style={{height:"50px"}}>
             <a
               href="/Tvshows"
               className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
@@ -59,7 +60,7 @@ function Home() {
               TV Shows
             </a>
           </div>
-          <div className="pt-4">
+          <div className="pt-4" style={{height:"50px"}}>
             <a
               href="/Series"
               className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
@@ -71,7 +72,7 @@ function Home() {
           <Button variant="danger" className="w-100 py-2 fw-bold">
             Website info.
           </Button>
-          <div className="pt-4">
+          <div className="pt-4" style={{height:"50px"}}>
             <a
               href="/About"
               className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
@@ -79,7 +80,7 @@ function Home() {
               About
             </a>
           </div>
-          <div className="pt-4">
+          <div className="pt-4" style={{height:"50px"}}>
             <a
               href="/Contact"
               className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
@@ -89,7 +90,7 @@ function Home() {
           </div>
         </Col>
 
-        <Col className="bg-dark col-10 pt-4 ">
+        <Col className="bg-dark col-10 pt-4 col-sm-6 col-md-10 col-lg-10">
           <div className="d-flex justify-content-center">
             <Form.Control
               type="text"

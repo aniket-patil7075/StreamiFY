@@ -1,13 +1,19 @@
 import React from 'react'
 import Content from './Content'
 // import {info} from "./ContextProvider"
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import { info } from "./ContextProvider";
+import Card from "react-bootstrap/Card";
 
 function Movies() {
   // const {movie}=useContext(info)
   // console.log(movie)
   return (
     <div>
-      <Row>
+      {/* <Row>
         <Col
           className="bg-dark col-2 py-4 px-5"
           style={{ borderRight: "2px solid white" }}
@@ -17,7 +23,7 @@ function Movies() {
             New Feeds
           </Button>
           <div className="pt-4">
-            {/* <FontAwesomeIcon icon="fa-solid fa-fire" /> */}
+            
             <a
               href=""
               className="text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
@@ -89,11 +95,12 @@ function Movies() {
             <Button variant="outline-light">Search</Button>
           </div>
           <div className="my-5 d-flex justify-content-around">
-            {/* <Cardss/> */}
+            
             <h3 className='text-danger'>Movies</h3>
           </div>
         </Col>
-      </Row>
+      </Row> */}
+      <h1 className='text-danger'>Movie main</h1>
     </div>
   )
 }
