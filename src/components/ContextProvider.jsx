@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react';
 import Home from './Home';
 export const info = createContext();
 const API_URL=`http://www.omdbapi.com/?apikey=a0446730&s=titanic`
@@ -16,7 +16,7 @@ function ContextProvider() {
         console.log(data);
         if(data.Response==="True"){
           setIsLoading(false);
-          setMovie(data.search);
+          setMovie(data.Search);
         }else{
           setIsError({
             show:true,

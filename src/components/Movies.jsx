@@ -1,7 +1,10 @@
 import React from 'react'
 import Content from './Content'
+// import {info} from "./ContextProvider"
 
 function Movies() {
+  // const {movie}=useContext(info)
+  // console.log(movie)
   return (
     <div>
       <Row>

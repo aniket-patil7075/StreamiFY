@@ -5,6 +5,8 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import {info} from "./ContextProvider"
+import Card from 'react-bootstrap/Card';
+
 function Home() {
   const {movie}=useContext(info)
   console.log(movie)
@@ -91,8 +93,24 @@ function Home() {
             />
             <Button variant="outline-light">Search</Button>
           </div>
-          <div className="my-5 d-flex justify-content-around">
-            {/* <h1 className='text-danger'>Hello, {msg}</h1> */}
+          <div className="my-5">
+            <h1 className='text-light text-center'>Movies</h1>
+            
+            <div className='row mt-5 mx-5'>
+              {movie.map((curMovie)=>{
+                return(
+                  <div className="col-12 col-sm-6 col-md-4 col-lg-2-4 mb-4" key={curMovie.Title} style={{ flex: '0 0 20%' }}>
+  <Card style={{ width: '100%' }} className="bg-dark border border-white p-3">
+    <Card.Body className="text-center">
+      <Card.Title className="text-light">{curMovie.Title}</Card.Title>
+    </Card.Body>
+    <Card.Img variant="top" src={curMovie.Poster} style={{ height: '13rem' }} />
+  </Card>
+</div>
+
+                )
+              })}
+            </div>
           </div>
         </Col>
       </Row>

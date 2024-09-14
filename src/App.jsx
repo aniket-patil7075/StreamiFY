@@ -15,19 +15,21 @@ function App() {
 
   return (
     <ContextProvider>
-      <Router>
-        <div className='full-height'>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Movies" element={<Movies />} />
-            <Route path="/Tvshows" element={<TvShows />} />
-            <Route path="/Series" element={<Series />} />
-            <Route path="/About" element={<About />} />
-            <Route path="/Contact" element={<Contact />} />
-          </Routes>
-        </div>
-      </Router>
+      <Home/>
+      <Movies/>
     </ContextProvider>
+  //   <Router>
+  //   <div className='full-height'>
+  //     <Routes>
+  //       <Route path="/" element={<Home />} />
+  //       <Route path="/Movies" element={<Movies />} />
+  //       <Route path="/Tvshows" element={<TvShows />} />
+  //       <Route path="/Series" element={<Series />} />
+  //       <Route path="/About" element={<About />} />
+  //       <Route path="/Contact" element={<Contact />} />
+  //     </Routes>
+  //   </div>
+  // </Router>
   )
 }
 
