@@ -10,6 +10,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Home from './components/Home';
 import ContextProvider from './components/ContextProvider';
+import SinglePage from './components/SinglePage';
 
 function App() {
 
@@ -17,7 +18,9 @@ function App() {
     <ContextProvider>
       <Home/>
       <Movies/>
+      
     </ContextProvider>
+    
   //   <Router>
   //   <div className='full-height'>
   //     <Routes>

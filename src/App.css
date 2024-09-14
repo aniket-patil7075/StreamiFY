@@ -7,3 +7,31 @@
     min-height: 100vh;
   }
   
+.link{
+  transition: transform o.3s ease, font-size 0.3s ease;
+  font-size: 1rem;
+}
+.link:hover{
+  /* transform: translateY(-10px); */
+  font-size: 1.2rem;
+  transform: scale(1.05);
+}
+  
+
+#card-main {
+  transition: background-color 0.5s ease, transform 0.5s ease; 
+  background-color: transparent; 
+}
+
+#card-main:hover {
+  background-color: rgb(66, 65, 65) !important; 
+  transform: translateY(-10px); 
+}
+
+#card-img {
+  transition: transform 0.3s ease; 
+}
+
+#card-main:hover #card-img {
+  transform: scale(1.05); 
+}

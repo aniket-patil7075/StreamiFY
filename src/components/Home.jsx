@@ -1,31 +1,36 @@
-import React, { useContext } from 'react'
-import Content from './Content'
+import React, { useContext, useEffect } from "react";
+import Content from "./Content";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
-import {info} from "./ContextProvider"
-import Card from 'react-bootstrap/Card';
+import { info } from "./ContextProvider";
+import Card from "react-bootstrap/Card";
+import SinglePage from "./SinglePage";
+// import './App.css'
 
 function Home() {
-  const {movie}=useContext(info)
-  console.log(movie)
+  const { movie } = useContext(info);
+
+  useEffect(() => {
+    console.log(movie);
+  }, []);
   return (
     <div>
-        <Row>
+      <Row>
         <Col
-          className="bg-dark col-2 py-4 px-5"
+          className=" bg-dark col-2 py-4 px-5"
           style={{ borderRight: "2px solid white" }}
         >
           <h3 className="text-light fw-bold">StreamiFY</h3>
           <Button variant="danger" className="w-100 py-2 fw-bold mt-5">
             New Feeds
           </Button>
-          <div className="pt-4">
+          <div className=" pt-4">
             {/* <FontAwesomeIcon icon="fa-solid fa-fire" /> */}
             <a
               href=""
-              className="text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
+              className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
             >
               Trending
             </a>
@@ -33,7 +38,7 @@ function Home() {
           <div className="pt-4">
             <a
               href=""
-              className="text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
+              className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
             >
               Popular
             </a>
@@ -41,7 +46,7 @@ function Home() {
           <div className="pt-4">
             <a
               href="/Movies"
-              className="text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
+              className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
             >
               Movies
             </a>
@@ -49,7 +54,7 @@ function Home() {
           <div className="pt-4">
             <a
               href="/Tvshows"
-              className="text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
+              className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
             >
               TV Shows
             </a>
@@ -57,7 +62,7 @@ function Home() {
           <div className="pt-4">
             <a
               href="/Series"
-              className="text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
+              className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
             >
               Series
             </a>
@@ -69,7 +74,7 @@ function Home() {
           <div className="pt-4">
             <a
               href="/About"
-              className="text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
+              className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
             >
               About
             </a>
@@ -77,7 +82,7 @@ function Home() {
           <div className="pt-4">
             <a
               href="/Contact"
-              className="text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
+              className="link text-light link-offset-2 link-underline link-underline-opacity-0 fw-bold "
             >
               Contact
             </a>
@@ -94,29 +99,46 @@ function Home() {
             <Button variant="outline-light">Search</Button>
           </div>
           <div className="my-5">
-            <h1 className='text-light text-center'>Movies</h1>
-            
-            <div className='row mt-5 mx-5'>
-              {movie.map((curMovie)=>{
-                return(
-                  <div className="col-12 col-sm-6 col-md-4 col-lg-2-4 mb-4" key={curMovie.Title} style={{ flex: '0 0 20%' }}>
-  <Card style={{ width: '100%' }} className="bg-dark border border-white p-3">
-    <Card.Body className="text-center">
-      <Card.Title className="text-light">{curMovie.Title}</Card.Title>
-    </Card.Body>
-    <Card.Img variant="top" src={curMovie.Poster} style={{ height: '13rem' }} />
-  </Card>
-</div>
+            <h1 className="text-light text-center">Movies</h1>
 
-                )
+            <div className="row mt-5 mx-5" >
+              {movie.map((curMovie) => {
+                const {Title,Poster,imdbID}=curMovie;
+                return (
+                  <div
+                    id="card"
+                    className="col-12 col-sm-6 col-md-4 col-lg-2-4 mb-4"
+                    key={imdbID}
+                    style={{ flex: "0 0 20%" }}
+                    
+                  >
+                    <Card
+                      style={{ width: "100%" }}
+                      id="card-main"
+                      className="bg-dark border border-white p-3"
+                    >
+                      <Card.Body className="text-center">
+                        <Card.Title className="text-light">
+                          {Title}
+                        </Card.Title>
+                      </Card.Body>
+                      <Card.Img
+                      id="card-img"
+                        variant="top"
+                        src={Poster}
+                        style={{ height: "13rem" }}
+                      />
+                    </Card>
+                  </div>
+                );
               })}
             </div>
           </div>
         </Col>
       </Row>
-        
+      {/* <SinglePage/> */}
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
