@@ -11,6 +11,7 @@ import SinglePage from "./SinglePage";
 
 function Home() {
   const { movie } = useContext(info);
+  const {setQuery}=useContext(info)
 
   useEffect(() => {
     console.log(movie);
@@ -96,15 +97,17 @@ function Home() {
               type="text"
               placeholder="Search"
               className="w-50 bg-dark text-light me-3 ms-5"
+              onChange={(e)=>setQuery(e.target.value)}
             />
-            <Button variant="outline-light">Search</Button>
+            <Button variant="outline-light" onClick={(e)=>e.preventDefault()} >Search</Button>
           </div>
           <div className="my-5">
             <h1 className="text-light text-center">Movies</h1>
 
             <div className="row mt-5 mx-5" >
               {movie.map((curMovie) => {
-                const {Title,Poster,imdbID}=curMovie;
+                const {Title,Poster,imdbID}=curMovie; 
+                
                 return (
                   <div
                     id="card"
