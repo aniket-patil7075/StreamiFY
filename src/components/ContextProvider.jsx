@@ -1,14 +1,16 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, {  createContext, useEffect, useState } from 'react';
 import Home from './Home';
+import Navi from './Navi';
+import SinglePage from './SinglePage';
 export const info = createContext();
 const API_URL=`http://www.omdbapi.com/?apikey=a0446730`
 
-function ContextProvider() {
+function ContextProvider({children}) {
 
   const [isLoading,setIsLoading]=useState(true);
   const[movie,setMovie]=useState([])
   const[isError,setIsError]=useState({show:"false",msg:""})
-  const [query,setQuery]=useState("avenger")
+  const [query,setQuery]=useState("love")
 
   const getMovies=async(url)=>{
     try{
@@ -37,7 +39,8 @@ function ContextProvider() {
   return (
     <div className='container-fluid'>
         <info.Provider value={{isLoading,movie,isError,query,setQuery}}>
-            <Home/>
+        
+            {children}
         </info.Provider>
     </div>
   )
