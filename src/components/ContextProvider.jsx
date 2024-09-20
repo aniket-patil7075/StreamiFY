@@ -10,7 +10,7 @@ function ContextProvider({children}) {
   const [isLoading,setIsLoading]=useState(true);
   const[movie,setMovie]=useState([])
   const[isError,setIsError]=useState({show:"false",msg:""})
-  const [query,setQuery]=useState("love")
+  const [query,setQuery]=useState("batman")
 
   const getMovies=async(url)=>{
     try{
@@ -33,7 +33,12 @@ function ContextProvider({children}) {
   }
 
     useEffect(()=>{
-      getMovies(`${API_URL}&s=${query}`)
+      let timerOut=setTimeout(()=>{
+        getMovies(`${API_URL}&s=${query}`)
+      },1000);
+
+      return ()=>clearTimeout(timerOut)
+      
     },[query])
     
   return (
